@@ -4,7 +4,7 @@ class TestTools {
     if(testDetails.Summary.FailedAsserts > 0) {
       var subject = "Errors in report: " + testDetails.Context.Report.Name; 
       var body = GetHtmlBody(testDetails.Context.Report, testDetails.Context.Component, testDetails.Summary);
-      testDetails.Context.Confirmit.SendMail(TestConfig.SenderEmailAddress, TestConfig.RecipientEmailAddress, subject, body, "", "", 2, -1, body);
+      testDetails.Context.Confirmit.SendMail(Tests_Config.SenderEmailAddress, Tests_Config.RecipientEmailAddress, subject, body, "", "", 2, -1, body);
     }
   }
   
@@ -19,7 +19,7 @@ class TestTools {
     var testResults = new TestResults(report, results);
     var plainTextBody = testResults.GetPlaintextBody();
     var htmlBody = testResults.GetHtmlBody();
-    confirmit.SendMail(TestConfig.SenderEmailAddress, TestConfig.RecipientEmailAddress, "Errors in report: " + report.Name, plainTextBody, "", "", 2, -1, htmlBody);
+    confirmit.SendMail(Tests_Config.SenderEmailAddress, Tests_Config.RecipientEmailAddress, "Errors in report: " + report.Name, plainTextBody, "", "", 2, -1, htmlBody);
   }
 }
 

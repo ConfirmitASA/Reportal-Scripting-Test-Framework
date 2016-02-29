@@ -71,10 +71,10 @@ class Assert {
   }
   
   private static function LogTest(result, text, log) {
-    if(TestConfig.WriteToText) {
+    if(Tests_Config.WriteToText) {
 	  text.Output.Append(result.htmlMessage);
     }
-	if(TestConfig.WriteToLog) {
+	if(Tests_Config.WriteToLog) {
 	  log.LogDebug(result.plainTextMessage);
 	}
   }
